@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <h1>我的模板页面Head</h1>
+    <script>
+        function useCamera(){
+            window.camera.onUseCamera();
+        }
+        function getPic(){
+            var filePath = "";
+            tempPath = window.getPicture.onGetPic();
+            filePath = "file:mnt" + window.getPicture.onGetPic();
+            if(tempPath == ""){
+                alert("filePath is null.")
+            }else {
+                alert(filePath)
+                document.getElementById("testImage").src = filePath;  
+            }
+        }
+    </script>
+    {% block image %}
+        <img id="testImage" src="http://www.0739i.com.cn/data/attachment/portal/201603/09/120156helmal6kjtk6uj51.jpg" width="300" height="300" onclick="useCamera()"/>
+    {% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}
+        <hr>
+        <p>谢谢来到我的网站!</p>
+    {% endblock %}
+</body>
+</html>
