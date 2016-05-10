@@ -14,7 +14,7 @@ def hello(request):
 # 主页
 def homePage(request, order):
     # now = datetime.datetime.now()
-    db = MySQLdb.connect(user='root', db='rap_db', passwd='123456', host='192.168.0.199', port=3306, charset='utf8')
+    db = MySQLdb.connect(user='root', db='rap_db', passwd='123456', host='localhost', port=3306, charset='utf8')
     cursor = db.cursor()
     sql = ''
     if order == 1 or cmp(order, 1):
